@@ -3,11 +3,294 @@ hello there
 hello everyone
 hello friend
 hello cat
+hello dog
+hello bird
+hello again
+hello today
+hello morning
+
 how are you
 how is life
 how are things
+how is your day
+how are you today
+how is everything
+how do you feel
+how does this work
+how can this happen
+how can i learn
+
 the cat
 the dog
 the bird
 the sun
 the moon
+the sky
+the tree
+the house
+the car
+the road
+the boy
+the girl
+the friend
+the world
+the computer
+the phone
+the book
+the door
+the room
+the garden
+
+a cat
+a dog
+a bird
+a small cat
+a big dog
+a blue bird
+a red car
+a green tree
+a small house
+a big house
+a young boy
+a young girl
+a good friend
+a new book
+a new computer
+
+the cat is small
+the cat is big
+the cat is happy
+the cat is sleeping
+the cat is running
+the dog is small
+the dog is big
+the dog is happy
+the dog is running
+the bird is flying
+the bird is small
+the bird is blue
+the sun is bright
+the moon is bright
+the sky is blue
+the tree is green
+
+i am happy
+i am sad
+i am learning
+i am reading
+i am writing
+i am working
+i am coding
+i am studying
+i am tired
+i am ready
+
+you are happy
+you are learning
+you are reading
+you are writing
+you are working
+you are coding
+you are ready
+you are my friend
+
+we are happy
+we are learning
+we are working
+we are studying
+we are friends
+we are ready
+we are here
+we are together
+
+this is a cat
+this is a dog
+this is a bird
+this is a book
+this is a computer
+this is my house
+this is my room
+this is my friend
+this is a new idea
+this is very good
+
+that is a cat
+that is a dog
+that is a bird
+that is a house
+that is a car
+that is my book
+that is your computer
+that is a good idea
+
+i like cats
+i like dogs
+i like birds
+i like books
+i like computers
+i like coding
+i like learning
+i like reading
+i like music
+i like games
+
+i have a cat
+i have a dog
+i have a book
+i have a computer
+i have a phone
+i have a friend
+i have a house
+i have a new idea
+
+the cat likes the sun
+the dog likes the park
+the bird likes the tree
+the boy likes the book
+the girl likes the cat
+the friend likes music
+the boy reads the book
+the girl reads the book
+the cat sees the bird
+the dog sees the cat
+
+the sun is in the sky
+the moon is in the sky
+the bird is in the tree
+the cat is in the house
+the dog is in the park
+the book is on the table
+the phone is on the table
+the computer is on the desk
+
+i go to school
+i go to work
+i go to the park
+i go to the store
+i go to the house
+you go to school
+you go to work
+we go to the park
+we go to school
+
+i can read
+i can write
+i can learn
+i can code
+i can run
+i can walk
+i can think
+i can build
+you can learn
+you can code
+we can learn
+we can build
+
+i want to learn
+i want to code
+i want to read
+i want to build
+i want to understand
+you want to learn
+you want to code
+we want to learn
+we want to build
+
+learning is good
+coding is fun
+reading is useful
+writing is useful
+practice is important
+learning is important
+coding is important
+knowledge is powerful
+practice makes progress
+learning takes time
+
+the computer is fast
+the computer is slow
+the phone is small
+the phone is new
+the book is old
+the house is big
+the room is small
+the car is fast
+the road is long
+the tree is tall
+
+today is good
+today is sunny
+today is warm
+today is a new day
+tomorrow is another day
+the morning is bright
+the night is dark
+the sky is clear
+the weather is good
+
+one cat
+two cats
+one dog
+two dogs
+one bird
+two birds
+three books
+four books
+five trees
+ten people
+
+red car
+blue car
+green tree
+red apple
+blue sky
+green grass
+black dog
+white bird
+small house
+big house
+
+cat and dog
+cat and bird
+dog and bird
+sun and moon
+boy and girl
+book and computer
+school and work
+reading and writing
+learning and coding
+
+where are you
+where is the cat
+where is the dog
+where is my book
+where is the computer
+what is this
+what is that
+what is your name
+what do you want
+what do you like
+why are you here
+why is the sky blue
+when are you ready
+when do you study
+
+good morning
+good evening
+good night
+good friend
+good idea
+good book
+good day
+good work
+good job
+
+thank you
+thank you friend
+thank you for helping
+thank you for your help
+you are welcome
+see you later
+see you tomorrow
+have a good day
+have a good night
