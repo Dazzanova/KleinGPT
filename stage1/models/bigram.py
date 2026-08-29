@@ -21,8 +21,14 @@ for i in range(len(text) - 1):
 
     counts[current_id][next_id] += 1
 
-counts = counts + 1;
+counts = counts + 1; # add one smoothing (to  prevent divsion by 0)
 
 probs = counts / counts.sum(axis=1, keepdims=True)
 
-print(probs)
+char = 'h'
+c = tokenizer.stoi[char];
+
+next_id = np.argmax(probs[c])
+next_char = tokenizer.itos[next_id]
+
+print(next_char)
