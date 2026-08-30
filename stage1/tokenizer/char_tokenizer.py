@@ -1,5 +1,5 @@
 class Tokenizer:
-    def __init__(self, text):
+    def __init__(self, text: str):
         self.vocab = sorted(set(text))
 
         self.stoi = {
