@@ -1,0 +1,21 @@
+
+Vocabulary: ['\n', ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'v', 'w', 'y']
+Vocabulary size: 25
+Encoded: [9, 6, 13, 13, 16]
+Decoded: hello
+(25, 25)
+Before: 0.022372362776683204
+Epoch:  10 Loss:  2.7823508142380478
+Epoch:  20 Loss:  2.0665038200460493
+Epoch:  30 Loss:  2.051102303953709
+Epoch:  40 Loss:  2.045693177499267
+Epoch:  50 Loss:  2.042909265983838
+Epoch:  60 Loss:  2.041227172205038
+Epoch:  70 Loss:  2.0401072028361416
+Epoch:  80 Loss:  2.0393095028964128
+Epoch:  90 Loss:  2.038712981631385
+Epoch:  100 Loss:  2.038250334837712
+After: 0.12304945310417896
+helcar whentow igontat
+whavedig lyoon inird ve le
+is i cod istuis frd tou cherfreriwle core cou i gog
