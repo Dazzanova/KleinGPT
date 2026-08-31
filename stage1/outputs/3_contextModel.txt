@@ -1,0 +1,70 @@
+// using lr = 0.01 ( 0.1 plateaued early)
+Epoch: 0 Loss: 3.0000014871327982
+Epoch: 10 Loss: 2.4841152956308643
+Epoch: 20 Loss: 1.5036587145694214
+Epoch: 30 Loss: 1.1684424922259251
+Epoch: 40 Loss: 1.0729741089749532
+Epoch: 50 Loss: 1.024797809380055
+Epoch: 60 Loss: 0.9956145428734083
+Epoch: 70 Loss: 0.9694587057937137
+Epoch: 80 Loss: 0.9536682851182604
+Epoch: 90 Loss: 0.9537633073673163
+
+Generated text:
+hello is u a new and bird
+wheng
+you are book dood idea
+we good morning
+thank you have a cat
+when blue you day
+whater
+black work
+i lonowu work
+when neak
+i par
+ods
+fhy neake book come
+what and ram ready yo
+
+Generated text:
+help
+have a good day
+i good can is thank
+when coday
+hous a care wewhen come
+
+good
+
+when
+
+cade
+
+good
+you forrow
+and dog
+i like is you pall
+thank
+thank you fater brig
+thank you are day
+have a reacy is than
+
+
+Generated text:
+help
+and bat is tha treen
+phhank you uldees
+how ready
+yean hat is ade
+what is ant
+thank happle
+thank brag
+what is flu study
+
+readils
+learhank
+beapeyef study
+
+good cat
+thank new are
+i have a chool house
+w
