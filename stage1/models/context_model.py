@@ -5,6 +5,7 @@ from stage1.tokenizer.char_tokenizer import Tokenizer
 with open("stage1/data/input.txt", "r") as f:
     text = f.read()
 
+
 tokenizer = Tokenizer(text)
 
 vocab_size = len(tokenizer.vocab)
@@ -31,10 +32,12 @@ w2 = np.random.randn(
 
 b2 = np.zeros(vocab_size)
 
+
 def softmax(x):
     x = x - np.max(x)
     exp_x = np.exp(x)
     return exp_x / np.sum(exp_x)
+
 
 ids = [tokenizer.stoi[ch] for ch in text]
 
@@ -51,77 +54,122 @@ for i in range(len(ids) - context_size):
 x = np.array(x)
 y = np.array(y)
 
-context = x[0]
-target = y[0]
 
-print("Context:", context)
-print("Target:", target)
+def train_step(context, target, learning_rate):
 
-vectors = embedding[context]
-print(vectors.shape)
+    global embedding, w1, b1, w2, b2
 
-flattened = vectors.flatten()
-print(flattened.shape)
+    vectors = embedding[context]
+    flattened = vectors.flatten()
 
-hidden_pre = flattened @ w1 + b1
-hidden = np.maximum(0, hidden_pre)
+    hidden_pre = flattened @ w1 + b1
+    hidden = np.maximum(0, hidden_pre)
 
-logits = hidden @ w2 + b2
-probs = softmax(logits)
+    logits = hidden @ w2 + b2
+    probs = softmax(logits)
 
-print("Hidden shape:", hidden.shape)
-print("Logits shape:", logits.shape)
-print("Probability sum:", probs.sum())
+    loss = -np.log(probs[target])
 
-loss = -np.log(probs[target])
+    dlogits = probs.copy()
+    dlogits[target] -= 1
 
-print("Target probability:", probs[target])
-print("Loss:", loss)
+    dw2 = np.outer(hidden, dlogits)
+    db2 = dlogits
 
-dlogits = probs.copy()
-dlogits[target] = dlogits[target] - 1
+    dhidden = dlogits @ w2.T
 
-dw2 = np.outer(hidden, dlogits)
-db2 = dlogits
+    drelu = hidden_pre > 0
+    dhidden_pre = dhidden * drelu
 
-dhidden = dlogits @ w2.T
+    dw1 = np.outer(flattened, dhidden_pre)
+    db1 = dhidden_pre
 
-drelu = (hidden_pre > 0)
-dhidden_pre = dhidden * drelu
+    dflattened = dhidden_pre @ w1.T
 
-dw1 = np.outer(flattened, dhidden_pre)
-db1 = dhidden_pre
+    dvectors = dflattened.reshape(
+        context_size,
+        embedding_dim
+    )
 
-dflattened = dhidden_pre @ w1.T
+    dembedding = np.zeros_like(embedding)
 
-dvectors = dflattened.reshape(context_size, embedding_dim)
+    for i, token_id in enumerate(context):
+        dembedding[token_id] += dvectors[i]
 
-dembedding = np.zeros_like(embedding)
+    w2 -= learning_rate * dw2
+    b2 -= learning_rate * db2
 
-for i, token_id in enumerate(context):
-    dembedding[token_id] += dvectors[i]
+    w1 -= learning_rate * dw1
+    b1 -= learning_rate * db1
 
-learning_rate = 0.1
+    embedding -= learning_rate * dembedding
 
-w2 -= learning_rate * dw2
-b2 -= learning_rate * db2
+    return loss
 
-w1 -= learning_rate * dw1
-b1 -= learning_rate * db1
 
-embedding -= learning_rate * dembedding
+def generate(start_text, num_chars):
 
-vectors = embedding[context]
-flattened = vectors.flatten()
+    context = [
+        tokenizer.stoi[ch]
+        for ch in start_text
+    ]
 
-hidden_pre = flattened @ w1 + b1
-hidden = np.maximum(0, hidden_pre)
+    result = list(start_text)
 
-logits = hidden @ w2 + b2
-probs = softmax(logits)
+    for _ in range(num_chars):
 
-new_loss = -np.log(probs[target])
+        context_ids = context[-context_size:]
 
-print("After update:")
-print("Target probability:", probs[target])
-print("Loss:", new_loss)
+        vectors = embedding[context_ids]
+        flattened = vectors.flatten()
+
+        hidden_pre = flattened @ w1 + b1
+        hidden = np.maximum(0, hidden_pre)
+
+        logits = hidden @ w2 + b2
+        probs = softmax(logits)
+
+        next_id = np.random.choice(
+            vocab_size,
+            p=probs
+        )
+
+        result.append(tokenizer.itos[next_id])
+
+        context.append(next_id)
+
+    return "".join(result)
+
+
+learning_rate = 0.01
+epochs = 100
+
+
+for epoch in range(epochs):
+
+    total_loss = 0
+
+    for context, target in zip(x, y):
+
+        loss = train_step(
+            context,
+            target,
+            learning_rate
+        )
+
+        total_loss += loss
+
+    average_loss = total_loss / len(x)
+
+    if epoch % 10 == 0:
+        print(
+            "Epoch:",
+            epoch,
+            "Loss:",
+            average_loss
+        )
+
+
+print()
+print("Generated text:")
+print(generate("hel", 200))
