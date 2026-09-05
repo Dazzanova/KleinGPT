@@ -19,17 +19,17 @@ class Tokenizer:
         return "".join(self.itos[i] for i in ids)
 
 
-with open("stage1/data/input.txt", "r") as f:
-    text = f.read()
+# with open("stage1/data/input.txt", "r") as f:
+#     text = f.read()
 
 
-tokenizer = Tokenizer(text)
+# tokenizer = Tokenizer(text)
 
-print("Vocabulary:", tokenizer.vocab)
-print("Vocabulary size:", len(tokenizer.vocab))
+# print("Vocabulary:", tokenizer.vocab)
+# print("Vocabulary size:", len(tokenizer.vocab))
 
-encoded = tokenizer.encode("hello")
-print("Encoded:", encoded)
+# encoded = tokenizer.encode("hello")
+# print("Encoded:", encoded)
 
-decoded = tokenizer.decode(encoded)
-print("Decoded:", decoded)
+# decoded = tokenizer.decode(encoded)
+# print("Decoded:", decoded)
