@@ -1,13 +1,8 @@
 import numpy as np
 
-
 np.random.seed(42)
 
-X = np.array([
-    [1.0, 0.0],
-    [0.0, 1.0],
-    [1.0, 1.0]
-])
+X = np.array([[1.0, 0.0], [0.0, 1.0], [1.0, 1.0]])
 
 print("X:")
 print(X)
@@ -44,13 +39,21 @@ d_k = K.shape[1]
 
 scores = (Q @ K.T) / np.sqrt(d_k)  # scaled dot-product attention
 
+
 def softmax(x):
     x = x - np.max(x, axis=1, keepdims=True)
     exp_x = np.exp(x)
     return exp_x / np.sum(exp_x, axis=1, keepdims=True)
+
 
 attention_weights = softmax(scores)
 
 print()
 print("Attention weights:")
 print(attention_weights)
+
+output = attention_weights @ V
+
+print()
+print("Attention output:")
+print(output)

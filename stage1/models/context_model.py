@@ -1,6 +1,6 @@
 import numpy as np
-from stage1.tokenizer.char_tokenizer import Tokenizer
 
+from stage1.tokenizer.char_tokenizer import Tokenizer
 
 with open("stage1/data/input.txt", "r") as f:
     text = f.read()
